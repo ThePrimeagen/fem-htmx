@@ -15,6 +15,12 @@ are not working or working oddly
 
 <br/>
 <br/>
+
+**I may mess up** and accidentally correctly program something... if that
+happens i'll have to undo that part :)
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -77,6 +83,12 @@ annoying.  Fully agree.  I intentionally chose templates for the reason stated
 above, they are simple and require almost no understanding to follow along.
 This is an HTMX course, not a "here is a cool templating language and now lets
 learn that" course
+
+<br/>
+<br/>
+
+Which also means i'll try to keep everything in one file and i will try to be
+as grug brain as possible while programming
 
 <br/>
 <br/>
@@ -160,6 +172,7 @@ one is just simple and is great to use for this
 
 ```bash
 go get github.com/labstack/echo/v4
+go get github.com/labstack/echo/v4/middleware
 mkdir cmd
 touch cmd/main.go
 ```
@@ -195,6 +208,7 @@ import (
 	"io"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 type Template struct {
@@ -222,6 +236,7 @@ func main() {
     count := Count{Count: 0}
 
     e.Renderer = newTemplate()
+    e.Use(middleware.Logger())
 
     e.GET("/", func(c echo.Context) error {
         count.Count++
@@ -357,13 +372,19 @@ I think its time to introduce HTMX in a more structured way... don't you think?
 <br/>
 <br/>
 
-### HATEOS
+### Principle: HATEOAS
 * Hypermedia As The Engine Of Application State
 * Does that mean HTML is finally a programming language?
 * Does that mean I am an HTML Engineer?
 
 <br/>
 <br/>
+
+Its existed for a long time
+[HATEOAS Circa 2011](https://steveklabnik.com/writing/some-people-understand-rest-and-http)
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -378,17 +399,30 @@ I think its time to introduce HTMX in a more structured way... don't you think?
 <br/>
 <br/>
 
-### How does HTMX Work?
-Its ackshually quite simple.  To the point of being so simple it must be
-incorrect.  Your client has points in HTML which can interact with the server,
-and the server will respond with moar HTML.
+### Excalidraw how htmx works
+The easiest way to understand htmx is to see it drawn out
+TODO: Practice with excalli
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-* Common argument: Aren't servers suppose to respond with JSON?
-  - What if I need a different view?
-  - Why would my server understand the representation of the client?
+### Common Arguments
+**Aren't servers suppose to respond with JSON?**
+- What if I need a different view?
+- Why would my server understand the representation of the client?
 
 <br/>
 <br/>
@@ -417,6 +451,12 @@ business logic bug
 
 <br/>
 <br/>
+
+**Isn't producing HTML Slow?**
+- No, its quite simple why
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -431,7 +471,7 @@ business logic bug
 <br/>
 <br/>
 
-### So how does HTMX work?
+### HTMXify
 Any element can have attributes that trigger htmx interactivity.
 
 ```HTML

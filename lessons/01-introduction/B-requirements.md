@@ -4,8 +4,7 @@ description: "What you need to get started"
 ---
 
 ### Golang
-The viz for some of the data is done with a go server, you need Go 1.21 or
-higher
+I'll be using golang for the server
 
 [Install Golang](https://go.dev/doc/install)
 
