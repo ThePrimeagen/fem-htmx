@@ -1,6 +1,6 @@
 ---
-title: "HTMX Delete and Events"
-description: "Lets talk about the delete"
+title: "HTMX Status Codes, Events, And Swaps"
+description: "going deep on hx-swap, oob, and status codes"
 ---
 
 ### This is great... but... not really
