@@ -725,7 +725,7 @@ document.body.addEventListener('htmx:beforeSwap', function(evt) {
 {{ end }}
 
 {{ block "oob-contact" . }}
-<div hx-swap-oob="beforebegin" id="contacts">
+<div hx-swap-oob="afterbegin" id="contacts">
     {{ template "contact" . }}
 </div>
 {{ end }}
