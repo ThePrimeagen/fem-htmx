@@ -35,7 +35,6 @@ serious would ever use htmx...
 well that is not true
 
 [From React To HTMX](https://www.youtube.com/watch?v=3GObi93tjZI)
-TODO: Websites that use htmx in production
 
 <br/>
 <br/>
@@ -55,6 +54,29 @@ TODO: Websites that use htmx in production
 
 ### Why do I like HTMX?
 This may require a bit of a story...
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Other resources
+two important notes here.
+
+1. htmx is extremely googleable.  Meaning, once you know your terms, its very easy to search and get to the answer
+1. there is a great book!  [HTMX Book](https://hypermedia.systems/)
+  * its free (digital)!
 
 <br/>
 <br/>
