@@ -1,10 +1,12 @@
 ---
-title: "JavaScwipt Perfowmance"
-description: "lets make javascript fast"
+title: "HTMX"
+description: "Simplify development by not requiring the universe to build a simple application"
 ---
 
 ### Welcome
 HTMX... is it just a horse head shit posting library or is it more?
+
+![HTMX](./images/htmx.png)
 
 <br/>
 <br/>
@@ -34,7 +36,12 @@ serious would ever use htmx...
 
 well that is not true
 
-[From React To HTMX](https://www.youtube.com/watch?v=3GObi93tjZI)
+<br/>
+<br/>
+
+* [From React To HTMX](https://www.youtube.com/watch?v=3GObi93tjZI)
+* [A list of sites](https://htmx.org/webring/#)
+* Also the countless amount of people that mention they use for tooling
 
 <br/>
 <br/>

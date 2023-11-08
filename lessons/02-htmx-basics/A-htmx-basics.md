@@ -42,6 +42,7 @@ PHP from 10 years ago, that will probably help you.
 
 * We will use URLs today... i know a bit scary
 * We will use HTTP Status Codes...
+![HTTP Status Code Tom Foolery](./images/200.jpg)
 * We will even use HTTP Verbs, GET, POST, DELETE...
 * We will use as little dependencies as possible
   - i want this course about HTMX, not about other techs
@@ -118,7 +119,13 @@ templ Index(count int) {
 <br/>
 
 Ok back to our regularly scheduled programming, simple html site!  First, just
-the html required! (views/index.html)
+the html required! (views/index.html).
+
+<br/>
+<br/>
+
+* we should display a `count` that represents how many times the page has been refreshed.
+
 
 <br/>
 <br/>
@@ -166,14 +173,43 @@ the html required! (views/index.html)
 <br/>
 <br/>
 
-### Setup a quick server
+### Note on server
+**SIDE NOTE** If you are adept and know how to launch a server in your favorite language and know how to:
+* produce HTML on the server
+* respond with various status codes
+* make routes with params in them (i.e.: /contacts/:id)
+* read query params
+* create verb based routes: `GET`, `POST`, `DELETE`
+
+<br/>
+<br/>
+
+Then feel free to use the server/templating of your choice, because this isn't
+very complicated server activity.  We will not be using even sqlite for storage.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Setting up the server
 We will use echo... I know shut up, everyone has their favorite server, this
 one is just simple and is great to use for this
 
 ```bash
 go get github.com/labstack/echo/v4
 go get github.com/labstack/echo/v4/middleware
-mkdir cmd
 touch cmd/main.go
 ```
 
@@ -401,7 +437,6 @@ Its existed for a long time
 
 ### Excalidraw how htmx works
 The easiest way to understand htmx is to see it drawn out
-TODO: Practice with excalli
 
 <br/>
 <br/>
@@ -448,6 +483,7 @@ business logic bug
 1. your server knows the state and produces a "view" (html)
 1. that view is transfered across the turtles
 1. that view is then decoded by the htmx and placed according to the rules set on the originating element
+  - this contains a slight lie
 
 <br/>
 <br/>
@@ -471,7 +507,7 @@ business logic bug
 <br/>
 <br/>
 
-### HTMXify
+### HTMXify: One more time
 Any element can have attributes that trigger htmx interactivity.
 
 ```HTML
@@ -525,6 +561,10 @@ Any element can have attributes that trigger htmx interactivity.
 
 ### Do we like this?
 Well... its not "efficient" ... lets make it efficient?
+(notes)
+* button + count
+* count by id (debug)
+* outer
 
 <br/>
 <br/>

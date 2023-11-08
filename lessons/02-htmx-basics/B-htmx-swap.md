@@ -112,10 +112,7 @@ don't you love [turso](https://turso.tech/deeznuts)???
         {{ template "display" . }}
     </body>
 </html>
-```
 
-**views/data.html**
-```html
 {{ block "form" . }}
 <form hx-post="/contacts">
     <label for="name">Name</label>
