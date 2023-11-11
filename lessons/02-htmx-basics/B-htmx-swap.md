@@ -79,6 +79,8 @@ don't you love [turso](https://turso.tech/deeznuts)???
 <br/>
 
 **First The HTML** then we will do the server part
+* build a form with name and email and submit button
+* build a display list of name and emails (contacts)
 
 <br/>
 <br/>
@@ -341,6 +343,7 @@ There is more to offer with htmx...  lets give it a go
 <br/>
 
 ### What's wrong with this approach?
+* there are two big problems here...
 
 <br/>
 <br/>
@@ -359,8 +362,18 @@ There is more to offer with htmx...  lets give it a go
 <br/>
 
 ### what about errors?
-[Response Headers](https://htmx.org/reference/#response_headers)
-* lets make that change to return a `400` when there is a duplicate email
+One option is to use response headers: [Response Headers](https://htmx.org/reference/#response_headers)
+
+<br/>
+<br/>
+
+Another option: invert how we are doing this and use out of band updates
+
+<br/>
+<br/>
+
+* lets make that change to return a `400` when there is a duplicate email and
+  add error displays / maintaining values from server for the form
 
 <br/>
 <br/>
@@ -387,47 +400,42 @@ There is more to offer with htmx...  lets give it a go
 
 ### What we need to do
 1. lets change from 400 -> 422, respond with some extra headers
-1. add an id to the form (`this` doesn't work on `Hx-Retarget` ([issue](https://github.com/bigskysoftware/htmx/issues/1962))
 1. lets add this bit of JS to our index
 
 ```javascript
-document.body.addEventListener('htmx:beforeSwap', function(evt) {
-    if (evt.detail.xhr.status === 422) {
-        // allow 422 responses to swap as we are using this as a signal that
-        // a form was submitted with bad data and want to rerender with the
-        // errors
-        //
-        // set isError to false to avoid error logging in console
-        evt.detail.shouldSwap = true;
-        evt.detail.isError = false;
-    }
-});
+document.addEventListener("DOMContentLoaded", (event) => {
+    document.body.addEventListener('htmx:beforeSwap', function(evt) {
+        if (evt.detail.xhr.status === 422) {
+            // allow 422 responses to swap as we are using this as a signal that
+            // a form was submitted with bad data and want to rerender with the
+            // errors
+            //
+            // set isError to false to avoid error logging in console
+            evt.detail.shouldSwap = true;
+            evt.detail.isError = false;
+        }
+    });
+})
 ```
 
 <br/>
 <br/>
-
-### Conditional rendering
-Whenever i have to do this, i usually add the following template
-
-```html
-{{ block "test" . }}
-<div>
-__TESTING__
-</div>
-{{ end }}
-```
-
 <br/>
 <br/>
-
-makes it easy to know that a swap is happening the way i would expect
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
-### If target doesn't exist
-If target doesn't exist it can lead to wonkey behavior in htmx
+### Ok, we can render errors, what about success?
+Lets tackle this with out of band updates
 
 <br/>
 <br/>
@@ -445,29 +453,6 @@ If target doesn't exist it can lead to wonkey behavior in htmx
 <br/>
 <br/>
 
-### Awesome!  But how do we display errors?
-* lets create an Errors struct and pass it into forms
-
-<br/>
-<br/>
-
-This will require a bit of coding...
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 ### But we are STILL not right...
 How do we clear out the form... Or the under girding question, how do we update

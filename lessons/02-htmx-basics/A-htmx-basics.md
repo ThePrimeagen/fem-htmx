@@ -63,6 +63,37 @@ PHP from 10 years ago, that will probably help you.
 <br/>
 <br/>
 
+### Time to build server!
+**SIDE NOTE** If you are adept and know how to launch a server in your favorite language and know how to:
+* produce HTML on the server
+* respond with various status codes
+* make routes with params in them (i.e.: /contacts/:id)
+* read query params
+* create verb based routes: `GET`, `POST`, `DELETE`
+
+<br/>
+<br/>
+
+Then feel free to use the server/templating of your choice, because this isn't
+very complicated server activity.  We will not be using even sqlite for storage.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 ### Where do we start?
 I suppose the beginning would be good
 
@@ -124,7 +155,8 @@ the html required! (views/index.html).
 <br/>
 <br/>
 
-* we should display a `count` that represents how many times the page has been refreshed.
+### TASK
+* display a `count` that represents how many times the page has been requested.
 
 
 <br/>
@@ -156,36 +188,6 @@ the html required! (views/index.html).
     </body>
 </html>
 ```
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-### Note on server
-**SIDE NOTE** If you are adept and know how to launch a server in your favorite language and know how to:
-* produce HTML on the server
-* respond with various status codes
-* make routes with params in them (i.e.: /contacts/:id)
-* read query params
-* create verb based routes: `GET`, `POST`, `DELETE`
-
-<br/>
-<br/>
-
-Then feel free to use the server/templating of your choice, because this isn't
-very complicated server activity.  We will not be using even sqlite for storage.
 
 <br/>
 <br/>
@@ -305,8 +307,10 @@ Ok!  Lets get into the ackshual course!
 <br/>
 <br/>
 
-Lets add a button and an endpoint to increment count!  The results should be
-displayed on the page.  First lets add the endpoint to our server
+Lets do the following:
+* add an endpoint `POST /count` to that increments the count value and returns the index.html page
+* remove the incrementing in the `GET /` route
+* add a button to the html
 
 <br/>
 <br/>
@@ -336,25 +340,7 @@ displayed on the page.  First lets add the endpoint to our server
     });
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-### Lets add htmx and the button to our html!
-
-// views/index.html
+**views/index.html**
 ```html
 <html>
     <head>
@@ -367,6 +353,44 @@ displayed on the page.  First lets add the endpoint to our server
     </body>
 </html>
 ```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Nothing happened... why?
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### There is ... no htmx... duh?
+add to `head`
+<script src="https://unpkg.com/htmx.org@1.9.8"></script>
 
 <br/>
 <br/>
@@ -493,6 +517,12 @@ business logic bug
 
 <br/>
 <br/>
+
+**Seems like HTMX is for backend devs**
+- No serious UI/UX engineer would use htmx.... right?
+
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -561,10 +591,8 @@ Any element can have attributes that trigger htmx interactivity.
 
 ### Do we like this?
 Well... its not "efficient" ... lets make it efficient?
-(notes)
-* button + count
-* count by id (debug)
-* outer
+* lets first remove all the extra html
+* lets reduce it down to just count
 
 <br/>
 <br/>

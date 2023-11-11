@@ -29,6 +29,26 @@ yes... that is my introduction
 <br/>
 <br/>
 
+### But Hypermedia
+![HTMX](./images/hypermedia.png)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 ### Yes HTMX Memes
 But there is more.  If you have been on twitter you have probably seen quite a
 few hot takes about how terrible it is, how the account only memes, and no one

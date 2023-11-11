@@ -3,6 +3,26 @@ title: "Patterns"
 description: "some common patterns you may see in htmx"
 ---
 
+### Practice makes perfect
+As of right now I feel pretty proficient building tools with htmx
+* pairing with v.0 is amazing
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### The following examples
 * Are directly taken from the [HTMX book](https://hypermedia.systems/htmx-in-action)
 
@@ -23,7 +43,7 @@ description: "some common patterns you may see in htmx"
 <br/>
 
 ### The URL
-The current URL can be controlled contractually via htmx.  This can be great,
+The current URL can be controlled via htmx.  This can be great,
 but it can also lead into some funny locations.
 
 <br/>
@@ -31,10 +51,6 @@ but it can also lead into some funny locations.
 
 Lets say we created a contacts page and we wanted to allow deleting from the
 contacts page.  What should happen?
-
-* we should show the spinner, hx-indicator (covered)
-* probably disable the button on click
-* navigate back to the contacts page after done deleting
 
 <br/>
 <br/>
@@ -53,10 +69,10 @@ contacts page.  What should happen?
 <br/>
 
 ### First the HTML for the delete button
-
 ```html
 <button hx-delete="/contacts/{{ contact.Id }}"
-      hx-push-url="true" (1)
+      hx-indicator="#delete-indicator"
+      hx-push-url="true"
       hx-target="body">
 Delete Contact
 </button>
@@ -89,10 +105,7 @@ export function disableButton(button: HTMLButtonElement) {
         throw new Error("form without button");
     }
 
-    if (button.hasAttribute("disabled")) {
-        button.toggleAttribute("disabled", true);
-    }
-
+    button.removeAttribute("disabled", true);
     button.addEventListener("htmx:beforeRequest", function() {
         button.toggleAttribute("disabled", true);
     })
@@ -120,10 +133,7 @@ export function disableButton(button: HTMLButtonElement) {
 <br/>
 
 ### DELETE
-The second problem is `DELETE /contacts/:id`
-* should it return a contact page?
-  - seems... wild
-* what should it do?
+How do we get back to the contacts page?  How does this work?
 
 <br/>
 <br/>
@@ -186,7 +196,8 @@ We need a way to tell the backend to redirect instead of NoContent response.
 
 ```html
 <button hx-delete="/contacts/{{ contact.Id }}?redirect=true"
-      hx-push-url="true" (1)
+      hx-indicator="#delete-indicator"
+      hx-push-url="true"
       hx-target="body">
 Delete Contact
 </button>
@@ -194,6 +205,24 @@ Delete Contact
 
 The `?redirect=true` allows us to encode within the url the behavior we want.
 Remember, URLs can be state containers that have intention behind them, use it
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### To The Next Problem!
 
 <br/>
 <br/>
@@ -306,6 +335,26 @@ This pattern is known as the [Active Search](https://hypermedia.systems/more-htm
 <br/>
 <br/>
 
+### An Observation
+In some sense, htmx returns to more of an "engineering" feel.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 ### There is much much more you can do
 The question you should be asking yourself is "how much of my state can be
 represented by a url + http codes?"
@@ -317,7 +366,11 @@ The answer is a shocking amount of it can be.  There are few applications that
 cannot be and those are enumerated at the front of the htmx book.  But here is
 one of my own.
 
+<br/>
+<br/>
+
 * conways game of life
+* spreadsheets
 
 <br/>
 <br/>

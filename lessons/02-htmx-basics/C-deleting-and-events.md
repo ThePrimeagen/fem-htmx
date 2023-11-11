@@ -3,6 +3,25 @@ title: "hx-delete and events"
 description: "Lets delete some contacts"
 ---
 
+### Break time?
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 ### Deleting and Events
 before we do anything, we need a good icon!
 
@@ -76,7 +95,7 @@ instead we can just use verbs
 <br/>
 
 ### Lets update our html
-lets add the delete icon above to the address book to delete it!
+lets add the delete icon next to an address to delete it!
 
 * don't forget to wrap the svg in a div and do closest div, then .contact, then
   the fix :)
@@ -383,7 +402,7 @@ like
 <br/>
 <br/>
 
-### Terrible, shambles, creator is over 50
+### Terrible, shambles, creator is a boomer making boomer front ends
 we need this to look better...
 
 <br/>
@@ -403,20 +422,84 @@ we need this to look better...
 <br/>
 
 ### Well....
-1. hx-indicator and swap delays
-1. htmx.logAll() is your friend
+we do have options.
+1. hx-indicator
+2. swap delays
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### hx-indicator
+this allows us to expose an element while waiting for a request
+
+1. upgrade server to have static content
+```go
+    e.Static("/images", "images")
+    e.Static("/css", "css")
+```
+
+1. add css to the index
+```html
+<link rel="stylesheet" href="/css/index.css">
+```
+
+1. use this image for the indicator
+```html
+<img src="/images/bars.svg" alt="loading" style="width: 24px">
+```
+
+1. now implement the wrapping div to be our indicator for requests
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Now Swap Delay
+This is how we can add a nice fading effect
 
 <br/>
 <br/>
 
 Also i will not remember the CSS i need because CSS is a google first language
 for me
+
+<br/>
+<br/>
+
+**update css/index.css**
+
 ```css
 .contact.htmx-swapping {
     opacity:0;
     transition: opacity 500ms ease-in;
 }
 ```
+
 
 <br/>
 <br/>
