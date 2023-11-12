@@ -371,6 +371,7 @@ one of my own.
 
 * conways game of life
 * spreadsheets
+* maps
 
 <br/>
 <br/>
