@@ -59,8 +59,7 @@ be as much focus on HTMX as possible, not on anything else
 ### Lets build a small application
 a simple "contacts" application
 
-Lets create a simple application that has a form that takes in name and email
-and "saves" it
+The application has a form that takes in name and email and "saves" it
 
 * first lets create a form that takes a name and email
 * every time we hit "save" it will add the name and email to the server
@@ -372,8 +371,8 @@ Another option: invert how we are doing this and use out of band updates
 <br/>
 <br/>
 
-* lets make that change to return a `400` when there is a duplicate email and
-  add error displays / maintaining values from server for the form
+* lets first make the response be an error on duplicate email and display
+  errors in form, `400` status code for bad request
 
 <br/>
 <br/>
@@ -402,7 +401,8 @@ Another option: invert how we are doing this and use out of band updates
 1. lets change from 400 -> 422, respond with some extra headers
 1. lets add this bit of JS to our index
 
-```javascript
+```html
+<script>
 document.addEventListener("DOMContentLoaded", (event) => {
     document.body.addEventListener('htmx:beforeSwap', function(evt) {
         if (evt.detail.xhr.status === 422) {
@@ -416,6 +416,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 })
+</script>
 ```
 
 <br/>
@@ -454,15 +455,28 @@ Lets tackle this with out of band updates
 <br/>
 
 
-### But we are STILL not right...
-How do we clear out the form... Or the under girding question, how do we update
-2 places at once?
+### Where is my form?
+great question...
 
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-**OOB Updates**
-An Out Of Band Update (OOB) is a swap that happens outside the normal flow
+### Lets look at the HTML
+* is this correct?
+* simple fix...
 
 <br/>
 <br/>

@@ -370,44 +370,6 @@ Lets do the following:
 <br/>
 <br/>
 
-### Nothing happened... why?
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-### There is ... no htmx... duh?
-add to `head`
-<script src="https://unpkg.com/htmx.org@1.9.8"></script>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 ### What in the world has happened?
 I don't think i like these results... What is going on?
 

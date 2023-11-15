@@ -5,7 +5,8 @@ description: "some common patterns you may see in htmx"
 
 ### Practice makes perfect
 As of right now I feel pretty proficient building tools with htmx
-* pairing with v.0 is amazing
+* pairing with v.0 is amazing: [example](https://twitter.com/ThePrimeagen/status/1723090218192961939)
+
 
 <br/>
 <br/>

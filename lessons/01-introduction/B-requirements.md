@@ -68,31 +68,3 @@ go mod init mywebsite.tv/name
 <br/>
 <br/>
 
-### Honorable Mentions
-
-**Templ**<br/>
-yeah... go is ackshually cool
-
-```bash
-go install github.com/a-h/templ/cmd/templ@latest
-```
-
-Please check it out, it makes writing templates on golang server more like
-react (ish).
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-

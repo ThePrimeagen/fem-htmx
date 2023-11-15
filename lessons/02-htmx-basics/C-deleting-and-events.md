@@ -96,9 +96,9 @@ instead we can just use verbs
 
 ### Lets update our html
 lets add the delete icon next to an address to delete it!
-
-* don't forget to wrap the svg in a div and do closest div, then .contact, then
-  the fix :)
+* first include the icon next to address
+* next make it DELETE /contacts/:id
+* next make end point updates for this
 
 <br/>
 <br/>
@@ -458,7 +458,7 @@ this allows us to expose an element while waiting for a request
 
 1. use this image for the indicator
 ```html
-<img src="/images/bars.svg" alt="loading" style="width: 24px">
+<img src="/images/bars.svg" alt="loading" style="width: 1rem">
 ```
 
 1. now implement the wrapping div to be our indicator for requests
@@ -478,6 +478,26 @@ this allows us to expose an element while waiting for a request
 <br/>
 <br/>
 <br/>
+
+### Ok... maybe that was ... ok
+Not super cool.. but that was shocking declarative for that functionality
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 ### Now Swap Delay
 This is how we can add a nice fading effect
