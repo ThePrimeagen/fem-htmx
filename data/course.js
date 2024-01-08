@@ -7,8 +7,8 @@ const DEFAULT_CONFIG = {
   },
   title: "A Light Introduction Into HTMX",
   subtitle: "The greatest not frontend frontend framework of all time",
-  frontendMastersLink: "https://frontendmasters.com/courses/htmx/",
-  description: "",
+  frontendMastersLink: "https://frontendmasters.com/courses/htmx",
+  description: "HTMX... is it just a horse head library or is it more?",
   keywords: ["ThePrimeagen", "Live Coding", "HTMX", "Golang", "Go"],
   social: {
     twitter: "ThePrimeagen",
