@@ -5,7 +5,7 @@ const DEFAULT_CONFIG = {
     name: "ThePrimeagen",
     company: "Netflix",
   },
-  title: "A Light Introduction Into HTMX,
+  title: "A Light Introduction Into HTMX",
   subtitle: "The greatest not frontend frontend framework of all time",
   frontendMastersLink: "https://frontendmasters.com/courses/htmx",
   description: "HTMX... is it just a horse head library or is it more?",
