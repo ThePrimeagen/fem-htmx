@@ -27,7 +27,7 @@ cut and rerun the server, but that is kind of a pain
 <br/>
 
 ```bash
-go install github.com/cosmtrek/air@latest
+go install github.com/air-verse/air@latest
 ```
 <br/>
 <br/>
